@@ -63,4 +63,4 @@ Execute (NeomakeSh):
 
   RunNeomakeSh 'nonexistingcommand'
   AssertEqual len(getqflist()), 1
-  AssertEqual getqflist()[0].text, ' command not found: nonexistingcommand'
+  AssertNotEqual match(getqflist()[0].text, 'command not found: nonexistingcommand$'), -1
